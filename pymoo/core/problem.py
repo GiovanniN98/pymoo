@@ -368,6 +368,19 @@ class Problem:
 
         return ret
 
+    def __call__(self,
+                 X,
+                 *args,
+                 return_values_of=None,
+                 return_as_dictionary=False,
+                 **kwargs):
+
+        return self.evaluate(
+                 X,
+                 *args,
+                 return_values_of=None,
+                 return_as_dictionary=False,
+                 **kwargs)
     @Cache
     def nadir_point(self, *args, **kwargs):
         pf = self.pareto_front(*args, **kwargs)
